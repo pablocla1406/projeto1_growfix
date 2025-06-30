@@ -3,17 +3,167 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Growflix - Home</title>
     <!-- Bootstrap CSS -->
     <link href="assets/libs/bootstrap-5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <h1>Home Page</h1>
-        <p>Bem-vindo à página inicial!</p>
-    </div>
+    <!-- Header Section -->
+    <header class="hero-section">
+        <!-- Logo -->
+        <div class="logo-container">
+            <h1 class="logo">GROWFLIX</h1>
+        </div>
+        
+        <div class="hero-overlay">
+            <div class="container">
+                <div class="row justify-content-center text-center">
+                    <div class="col-lg-8">
+                        <div class="hero-content">
+                            <h1 class="hero-title">Growcasts, webinars e muito mais. Sem limites.</h1>
+                            <p class="hero-subtitle">Assista onde quiser</p>
+                            <p class="hero-text">Pronto para assistir?</p>
+                            <button class="btn btn-primary btn-lg cta-button">Vamos lá!</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>    <!-- TV Section -->
+    <section class="tv-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="tv-content">
+                        <h2 class="section-title">Aproveite na TV.</h2>
+                        <p class="section-text">Assista em Smart TVs,<br>
+                        PlayStation, Xbox, Chromecast<br>
+                        e outros dispositivos.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="tv-image">
+                        <div class="tv-mockup">
+                            <div class="tv-screen">
+                                <div class="video-content">
+                                    <div class="video-title">COMO É O DIA A DIA DE<br>UM DEV?</div>
+                                    <div class="video-duration">4 : 7</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Devices Section -->
+    <section class="devices-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="devices-image">
+                        <div class="device-mockups">
+                            <div class="phone-mockup">
+                                <div class="phone-screen"></div>
+                            </div>
+                            <div class="laptop-mockup">
+                                <div class="laptop-screen"></div>
+                            </div>
+                            <div class="tablet-mockup">
+                                <div class="tablet-screen"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="devices-content">
+                        <h2 class="section-title">Assista quando quiser.</h2>
+                        <p class="section-text">Assista no celular, tablet, Smart TV ou<br>
+                        notebook sem pagar a mais por isso.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <h2 class="section-title text-center mb-5">Perguntas frequentes</h2>
+                    
+                    <div class="faq-list">
+                        <div class="faq-item">
+                            <button class="faq-question" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                O que é a Growflix?
+                                <span class="faq-icon">+</span>
+                            </button>
+                            <div id="faq1" class="faq-answer collapse">
+                                <div class="faq-content">
+                                    A Growflix é uma plataforma de streaming focada em conteúdo educacional sobre tecnologia e desenvolvimento.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                Quanto custa a Growflix?
+                                <span class="faq-icon">+</span>
+                            </button>
+                            <div id="faq2" class="faq-answer collapse">
+                                <div class="faq-content">
+                                    Oferecemos diferentes planos para atender suas necessidades de aprendizado.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                Onde posso assistir?
+                                <span class="faq-icon">+</span>
+                            </button>
+                            <div id="faq3" class="faq-answer collapse">
+                                <div class="faq-content">
+                                    Você pode assistir em qualquer dispositivo: computador, tablet, smartphone ou Smart TV.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                                O que eu posso assistir na Growflix?
+                                <span class="faq-icon">+</span>
+                            </button>
+                            <div id="faq4" class="faq-answer collapse">
+                                <div class="faq-content">
+                                    Growcasts, webinars, cursos e muito mais conteúdo sobre tecnologia e programação.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                                A Growflix é adequada para crianças?
+                                <span class="faq-icon">+</span>
+                            </button>
+                            <div id="faq5" class="faq-answer collapse">
+                                <div class="faq-content">
+                                    Nosso conteúdo é focado em desenvolvimento profissional e educação tecnológica.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="text-center mt-5">
+                        <p class="faq-note">Pronto para assistir?</p>
+                        <button class="btn btn-primary btn-lg cta-button">Vamos lá!</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Bootstrap JS -->
     <script src="assets/libs/bootstrap-5.3.0/js/bootstrap.bundle.min.js"></script>
