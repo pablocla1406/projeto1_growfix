@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Growflix - Episódios</title>
+    <!-- Bootstrap CSS -->
+    <link href="assets/libs/bootstrap-5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body class="episodes-page">
+    <!-- Header -->
+    <header class="episodes-header">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col-auto">
+                    <h1 class="logo">GROWFLIX</h1>
+                </div>
+                <div class="col">
+                    <nav class="main-nav">
+                        <a href="home.html" class="nav-link">Início</a>
+                        <a href="#growcast" class="nav-link active">Growcast [Episódios]</a>
+                        <a href="#webinar-flutter" class="nav-link">Webinar em Flutter</a>
+                        <a href="#jornada-ux" class="nav-link">Jornada UX/UI</a>
+                        <a href="#diversos" class="nav-link">Diversos</a>
+                    </nav>
+                </div>
+                <div class="col-auto">
+                    <button class="btn btn-outline-light btn-sm">Entrar</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Featured Episode -->
+    <section class="featured-episode">
+        <div class="container-fluid">
+            <div class="featured-content">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <div class="featured-info">
+                            <span class="podcast-label">PODCAST</span>
+                            <h1 class="featured-title">GROWCAST</h1>
+                            <button class="btn btn-light btn-play">
+                                ▶ Assistir
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="featured-episode-card">
+                            <div class="episode-badge">EPISÓDIO 01</div>
+                            <h2 class="episode-title">E O QA<br>COM ISSO?</h2>
+                            <p class="episode-subtitle">WILLIAM SOARES<br>SOFTWARE QA ENGINEER NO IFAU</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Episodes Grid -->
+    <section id="growcast" class="episodes-section">
+        <div class="container-fluid">
+            <h2 class="section-title">Growcast [Episódios] ▶</h2>
+            
+            <div class="episodes-grid">
+                <div class="row g-3">
+                    <!-- Episode 1 -->
+                    <div class="col-xl-3 col-lg-4 col-md-6">
+                        <div class="episode-card">
+                            <div class="episode-thumbnail">
+                                <div class="episode-badge">EPISÓDIO 01</div>
+                                <div class="episode-content">
+                                    <div class="episode-status">ESTAMOS NO AR!</div>
+                                    <h3 class="episode-title">MANOEL<br>ROLDÃO</h3>
+                                    <p class="episode-subtitle">CONTA TUDO...</p>
+                                </div>
+                                <div class="hover-overlay">
+                                    <button class="hover-play-btn">▶</button>
+                                    <div class="hover-episode-info">
+                                        <h4 class="hover-episode-title">Growcast #00 - Conheça a Growdev</h4>
+                                        <p class="hover-episode-description">Manoel Roldão conta tudo sobre a história da Growdev</p>
+                                        <span class="hover-episode-duration">42 min</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Episode 2 -->
+                    <div class="col-xl-3 col-lg-4 col-md-6">
+                        <div class="episode-card">
+                            <div class="episode-thumbnail featured-bg">
+                                <div class="episode-badge">EPISÓDIO 01</div>
+                                <div class="episode-content">
+                                    <h3 class="episode-title">E O QA<br>COM ISSO?</h3>
+                                    <p class="episode-subtitle">WILLIAM SOARES<br>SOFTWARE QA ENGINEER NO IFAU</p>
+                                </div>
+                                <div class="hover-overlay">
+                                    <button class="hover-play-btn">▶</button>
+                                    <div class="hover-episode-info">
+                                        <h4 class="hover-episode-title">E o QA com isso?</h4>
+                                        <p class="hover-episode-description">William Soares fala sobre Quality Assurance</p>
+                                        <span class="hover-episode-duration">38 min</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Episode 3 -->
+                    <div class="col-xl-3 col-lg-4 col-md-6">
+                        <div class="episode-card">
+                            <div class="episode-thumbnail">
+                                <div class="episode-badge">EPISÓDIO 02</div>
+                                <div class="episode-content">
+                                    <h3 class="episode-title">E O QA LÁ<br>FORA?</h3>
+                                    <p class="episode-subtitle">GABRIEL SOARES<br>LEAD QUALITY ENGINEER NA DAFITI DO BR</p>
+                                </div>
+                                <div class="hover-overlay">
+                                    <button class="hover-play-btn">▶</button>
+                                    <div class="hover-episode-info">
+                                        <h4 class="hover-episode-title">E o QA lá fora?</h4>
+                                        <p class="hover-episode-description">Gabriel Soares fala sobre QA internacional</p>
+                                        <span class="hover-episode-duration">45 min</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Episode 4 -->
+                    <div class="col-xl-3 col-lg-4 col-md-6">
+                        <div class="episode-card">
+                            <div class="episode-thumbnail orange-bg">
+                                <div class="episode-badge">EPISÓDIO 03</div>
+                                <div class="episode-content">
+                                    <h3 class="episode-title">CONSELHO<br>PARA TI</h3>
+                                    <p class="episode-subtitle">NUNCA<br>DESISTA!</p>
+                                </div>
+                                <div class="hover-overlay">
+                                    <button class="hover-play-btn">▶</button>
+                                    <div class="hover-episode-info">
+                                        <h4 class="hover-episode-title">Conselho para TI</h4>
+                                        <p class="hover-episode-description">Dicas valiosas para quem está começando</p>
+                                        <span class="hover-episode-duration">32 min</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Episode 5 -->
+                    <div class="col-xl-3 col-lg-4 col-md-6">
+                        <div class="episode-card">
+                            <div class="episode-thumbnail blue-bg">
+                                <div class="episode-badge">EPISÓDIO 04</div>
+                                <div class="episode-content">
+                                    <h3 class="episode-title">AGILIDADE<br>IMPORTA?</h3>
+                                    <p class="episode-subtitle">LEANDRO SOUZA<br>COORDENADOR DE AGILE NA AZEVEDO & CO</p>
+                                </div>
+                                <div class="hover-overlay">
+                                    <button class="hover-play-btn">▶</button>
+                                    <div class="hover-episode-info">
+                                        <h4 class="hover-episode-title">Agilidade Importa?</h4>
+                                        <p class="hover-episode-description">Leandro Souza fala sobre metodologias ágeis</p>
+                                        <span class="hover-episode-duration">51 min</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Episode 6 -->
+                    <div class="col-xl-3 col-lg-4 col-md-6">
+                        <div class="episode-card">
+                            <div class="episode-thumbnail purple-bg">
+                                <div class="episode-badge">EPISÓDIO 05</div>
+                                <div class="episode-content">
+                                    <h3 class="episode-title">DOIS<br>EM UM</h3>
+                                    <p class="episode-subtitle">LUCAS ZLUHAN  OOO  DANIELE STUMPP<br>ALUNO DA 4ª EDIÇÃO DO STARTER FULL STACK WEB DEVELOPER</p>
+                                </div>
+                                <div class="hover-overlay">
+                                    <button class="hover-play-btn">▶</button>
+                                    <div class="hover-episode-info">
+                                        <h4 class="hover-episode-title">Dois em Um</h4>
+                                        <p class="hover-episode-description">Lucas e Daniele compartilham suas experiências</p>
+                                        <span class="hover-episode-duration">47 min</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Episode 7 -->
+                    <div class="col-xl-3 col-lg-4 col-md-6">
+                        <div class="episode-card">
+                            <div class="episode-thumbnail green-bg">
+                                <div class="episode-badge">EPISÓDIO 06</div>
+                                <div class="episode-content">
+                                    <h3 class="episode-title">LUGAR DE<br>MULHER</h3>
+                                    <p class="episode-subtitle">É NA TI<br>PONTO FINAL!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Episode 8 -->
+                    <div class="col-xl-3 col-lg-4 col-md-6">
+                        <div class="episode-card">
+                            <div class="episode-thumbnail orange-alt-bg">
+                                <div class="episode-badge">EPISÓDIO 07</div>
+                                <div class="episode-content">
+                                    <h3 class="episode-title">COMO<br>DESENVOLVER</h3>
+                                    <p class="episode-subtitle">TALENTOS PARA MERCADO<br>LUCAS TONIAZZO | CPO DA SIRIUS</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Episode 9 -->
+                    <div class="col-xl-3 col-lg-4 col-md-6">
+                        <div class="episode-card">
+                            <div class="episode-thumbnail dark-blue-bg">
+                                <div class="episode-badge">EPISÓDIO 08</div>
+                                <div class="episode-content">
+                                    <h3 class="episode-title">A IMPORTÂNCIA DA<br>CÉLULA DE<br>TALENTOS</h3>
+                                    <p class="episode-subtitle">PARA O MERCADO DE TI</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Episode 10 -->
+                    <div class="col-xl-3 col-lg-4 col-md-6">
+                        <div class="episode-card">
+                            <div class="episode-thumbnail orange-gradient-bg">
+                                <div class="episode-badge">EPISÓDIO 09</div>
+                                <div class="episode-content">
+                                    <h3 class="episode-title">A VIVÊNCIA DE UM<br>MENTOR</h3>
+                                    <p class="episode-subtitle">DENTRO DA CÉLULA<br>DE TALENTOS</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Webinar em Flutter Section -->
+    <section id="webinar-flutter" class="episodes-section">
+        <div class="container-fluid">
+            <h2 class="section-title">Webinar em Flutter ▶</h2>
+            
+            <div class="episodes-grid">
+                <div class="row g-3">
+                    <!-- Flutter Webinar 1 -->
+                    <div class="col-xl-3 col-lg-4 col-md-6">
+                        <div class="episode-card">
+                            <div class="episode-thumbnail flutter-purple-bg">
+                                <div class="episode-badge">WEBINAR</div>
+                                <div class="episode-content">
+                                    <h3 class="episode-title">Recriando a<br>interface do<br>LinkedIn com</h3>
+                                    <p class="episode-subtitle">✓ Flutter</p>
+                                    <p class="episode-author">com Karine Martins</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Flutter Webinar 2 -->
+                    <div class="col-xl-3 col-lg-4 col-md-6">
+                        <div class="episode-card">
+                            <div class="episode-thumbnail flutter-pink-bg">
+                                <div class="episode-badge">WEBINAR</div>
+                                <div class="episode-content">
+                                    <h3 class="episode-title">Recriando a<br>interface do<br>Instagram com</h3>
+                                    <p class="episode-subtitle">✓ Flutter</p>
+                                    <p class="episode-author">com Karine Martins</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Flutter Webinar 3 -->
+                    <div class="col-xl-3 col-lg-4 col-md-6">
+                        <div class="episode-card">
+                            <div class="episode-thumbnail flutter-contact-bg">
+                                <div class="episode-content">
+                                    <h3 class="episode-title">Ficou com alguma<br>dúvida?</h3>
+                                    <p class="episode-subtitle">Entre em contato conosco:</p>
+                                    <p class="episode-contact">(54) 99205-5953</p>
+                                    <p class="episode-contact">ola@growdev.com.br</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Flutter Webinar 4 -->
+                    <div class="col-xl-3 col-lg-4 col-md-6">
+                        <div class="episode-card">
+                            <div class="episode-thumbnail flutter-advanced-bg">
+                                <div class="episode-content">
+                                    <h3 class="episode-title">Como participar do<br>Programa Advanced</h3>
+                                    <p class="episode-description">Apresentação do Sucesso sobre os<br>Programas de Imersão</p>
+                                    <p class="episode-description">Apresentação sobre sobre as<br>principais vagas em aberto</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Flutter Webinar Large -->
+                    <div class="col-xl-6 col-lg-8 col-md-12">
+                        <div class="episode-card">
+                            <div class="episode-thumbnail flutter-large-bg">
+                                <div class="episode-content">
+                                    <h3 class="episode-title">Recriando o layout<br>do WhatsApp com</h3>
+                                    <p class="episode-subtitle">✓ Flutter</p>
+                                    <p class="episode-date">Quarta-feira, 14/10<br>às 19h</p>
+                                    <button class="btn btn-success">Inscrever-se já</button>
+                                </div>
+                                <div class="episode-play-btn">▶</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Featured Video Section -->
+                    <div class="col-xl-6 col-lg-4 col-md-12">
+                        <div class="featured-video-section">
+                            <div class="video-player">
+                                <div class="play-button">▶</div>
+                                <div class="video-info">
+                                    <h4>Webinar - Recriando a interface do<br>iFood com Flutter</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Jornada UX/UI Section -->
+    <section id="jornada-ux" class="episodes-section">
+        <div class="container-fluid">
+            <h2 class="section-title">Jornada UX/UI ▶</h2>
+            
+            <div class="episodes-grid">
+                <div class="row g-3">
+                    <!-- UX/UI Episode 1 -->
+                    <div class="col-xl-3 col-lg-4 col-md-6">
+                        <div class="episode-card">
+                            <div class="episode-thumbnail ux-purple-bg">
+                                <div class="episode-badge">Jornada</div>
+                                <div class="episode-content">
+                                    <h3 class="episode-title">O UX/UI Design<br>é para todos?</h3>
+                                    <button class="btn btn-pink">Live de Lançamento</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- UX/UI Episode 2 -->
+                    <div class="col-xl-3 col-lg-4 col-md-6">
+                        <div class="episode-card">
+                            <div class="episode-thumbnail ux-purple-bg">
+                                <div class="episode-badge">Jornada</div>
+                                <div class="episode-content">
+                                    <h3 class="episode-title">Como migrar para o UX/UI Design e se destacar de uma<br>forma?</h3>
+                                    <button class="btn btn-pink">Live de Lançamento</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- UX/UI Episode 3 -->
+                    <div class="col-xl-3 col-lg-4 col-md-6">
+                        <div class="episode-card">
+                            <div class="episode-thumbnail ux-purple-bg">
+                                <div class="episode-badge">Jornada</div>
+                                <div class="episode-content">
+                                    <h3 class="episode-title">As oportunidades de estudar em um programa de<br>tecnologia profissional para formação</h3>
+                                    <button class="btn btn-pink">Live de Lançamento</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- UX/UI Episode 4 -->
+                    <div class="col-xl-3 col-lg-4 col-md-6">
+                        <div class="episode-card">
+                            <div class="episode-thumbnail ux-purple-bg">
+                                <div class="episode-badge">Jornada</div>
+                                <div class="episode-content">
+                                    <h3 class="episode-title">O profissional de UX/UI Design no mercado digital</h3>
+                                    <button class="btn btn-pink">Live de Lançamento</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- UX/UI Episode 5 -->
+                    <div class="col-xl-3 col-lg-4 col-md-6">
+                        <div class="episode-card">
+                            <div class="episode-thumbnail ux-purple-bg">
+                                <div class="episode-badge">Jornada</div>
+                                <div class="episode-content">
+                                    <h3 class="episode-title">O papel do UX/UI Designer no desenvolvimento<br>de um produto digital</h3>
+                                    <button class="btn btn-pink">Conheça o Programa</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Diversos Section -->
+    <section id="diversos" class="episodes-section">
+        <div class="container-fluid">
+            <h2 class="section-title">Diversos ▶</h2>
+            
+            <div class="episodes-grid">
+                <div class="row g-3">
+                    <!-- Diversos 1 -->
+                    <div class="col-xl-3 col-lg-4 col-md-6">
+                        <div class="episode-card">
+                            <div class="episode-thumbnail diversos-orange-bg">
+                                <div class="episode-badge">#1</div>
+                                <div class="episode-content">
+                                    <span class="feedback-label">Feedback<br>do Parceiro</span>
+                                    <h3 class="episode-title">Safetech</h3>
+                                    <p class="episode-subtitle">É isso que as<br>empresas falam<br>DOS NOSSOS<br>GROWDEVERS</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Diversos 2 -->
+                    <div class="col-xl-3 col-lg-4 col-md-6">
+                        <div class="episode-card">
+                            <div class="episode-thumbnail diversos-dev-bg">
+                                <div class="episode-content">
+                                    <h3 class="episode-title">COMO É O DIA A DIA DE<br>UM DEV?</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Diversos 3 -->
+                    <div class="col-xl-3 col-lg-4 col-md-6">
+                        <div class="episode-card">
+                            <div class="episode-thumbnail diversos-red-bg">
+                                <div class="episode-badge">#2</div>
+                                <div class="episode-content">
+                                    <h3 class="episode-title">Você sabe onde<br>NOSSOS<br>ALUNOS<br>trabalham?</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Diversos 4 -->
+                    <div class="col-xl-3 col-lg-4 col-md-6">
+                        <div class="episode-card">
+                            <div class="episode-thumbnail diversos-blue-bg">
+                                <div class="episode-badge">AREZZO & CO</div>
+                                <div class="episode-content">
+                                    <span class="webinar-label">WEBINAR - VAGAS 2021</span>
+                                    <h3 class="episode-title">PAULO MARCON</h3>
+                                    <p class="episode-subtitle">Gerente de Squads</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Diversos 5 -->
+                    <div class="col-xl-6 col-lg-8 col-md-12">
+                        <div class="episode-card">
+                            <div class="episode-thumbnail diversos-large-bg">
+                                <div class="episode-content">
+                                    <h3 class="episode-title">CONHEÇA A<br>AREZZO</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container-fluid">
+            <div class="footer-content">
+                <div class="footer-contact">
+                    <p>Dúvidas? Ligue 0800 591 8942</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6">
+                            <ul class="footer-list">
+                                <li><a href="#">Perguntas frequentes</a></li>
+                                <li><a href="#">Relações com investidores</a></li>
+                                <li><a href="#">Formas de assistir</a></li>
+                                <li><a href="#">Informações corporativas</a></li>
+                                <li><a href="#">Só na Growflix</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <ul class="footer-list">
+                                <li><a href="#">Central de Ajuda</a></li>
+                                <li><a href="#">Carreiras</a></li>
+                                <li><a href="#">Termos de Uso</a></li>
+                                <li><a href="#">Entre em contato</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <ul class="footer-list">
+                                <li><a href="#">Conta</a></li>
+                                <li><a href="#">Resgatar cartão pré-pago</a></li>
+                                <li><a href="#">Privacidade</a></li>
+                                <li><a href="#">Teste de velocidade</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <ul class="footer-list">
+                                <li><a href="#">Media Center</a></li>
+                                <li><a href="#">Comprar cartão pré-pago</a></li>
+                                <li><a href="#">Preferências de cookies</a></li>
+                                <li><a href="#">Avisos legais</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-bottom">
+                    <p>Growflix Growdev</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="assets/libs/bootstrap-5.3.0/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/script.js"></script>
+</body>
+</html>
