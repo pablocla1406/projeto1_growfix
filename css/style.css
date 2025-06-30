@@ -883,6 +883,72 @@ body {
     background-color: #218838;
 }
 
+/* Footer Growflix */
+.footer {
+    background: #111;
+    color: #aaa;
+    padding: 40px 0 20px 0;
+    font-size: 0.95rem;
+    margin-top: 60px;
+}
+.footer-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.footer-contact {
+    text-align: left;
+    margin-bottom: 25px;
+    font-size: 1.1rem;
+    color: #fff;
+}
+.footer-links {
+    margin-bottom: 25px;
+}
+.footer-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+}
+.footer-list li {
+    margin-bottom: 12px;
+}
+.footer-list a {
+    color: #aaa;
+    text-decoration: none;
+    font-size: 0.97rem;
+    transition: color 0.2s;
+}
+.footer-list a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+.footer-bottom {
+    text-align: left;
+    color: #666;
+    font-size: 0.95rem;
+    margin-top: 20px;
+}
+@media (max-width: 991px) {
+    .footer-list {
+        margin-bottom: 30px;
+    }
+    .footer-content {
+        padding: 0 10px;
+    }
+}
+@media (max-width: 767px) {
+    .footer-content {
+        padding: 0 5px;
+    }
+    .footer-contact, .footer-bottom {
+        text-align: center;
+    }
+    .footer-links .row > div {
+        margin-bottom: 20px;
+    }
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .hero-title {
