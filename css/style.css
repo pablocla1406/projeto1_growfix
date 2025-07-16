@@ -43,10 +43,9 @@ body {
 }
 
 .logo {
-    font-size: 2.5rem;
-    font-weight: 900;
-    color: var(--primary-color);
-    letter-spacing: 2px;
+    height: 40px;
+    width: auto;
+    max-width: 200px;
 }
 
 .hero-overlay {
@@ -56,6 +55,8 @@ body {
     justify-content: center;
     text-align: center;
     padding: 100px 0;
+    position: relative;
+    z-index: 2;
 }
 
 .hero-content {
@@ -64,7 +65,7 @@ body {
 }
 
 .hero-title {
-    font-size: 4rem;
+    font-size: 4.5rem;
     font-weight: 700;
     margin-bottom: 1.5rem;
     line-height: 1.1;
@@ -85,7 +86,7 @@ body {
 .cta-button {
     background-color: var(--primary-color);
     border: none;
-    padding: 15px 40px;
+    padding: 14px 32px;
     font-size: 1.2rem;
     font-weight: 600;
     border-radius: 4px;
@@ -93,6 +94,9 @@ body {
     text-transform: uppercase;
     letter-spacing: 1px;
     transition: all 0.3s ease;
+    position: relative;
+    z-index: 3;
+    cursor: pointer;
 }
 
 .cta-button:hover {
@@ -151,6 +155,13 @@ body {
     height: 20px;
     background-color: #1a1a1a;
     border-radius: 0 0 10px 10px;
+}
+
+.tv-screen-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
 }
 
 .video-content {
@@ -323,7 +334,18 @@ body {
     transition: transform 0.3s ease;
 }
 
+.faq-icon-img {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s ease;
+    filter: brightness(0) invert(1); /* Makes SVG white */
+}
+
 .faq-question[aria-expanded="true"] .faq-icon {
+    transform: rotate(45deg);
+}
+
+.faq-question[aria-expanded="true"] .faq-icon-img {
     transform: rotate(45deg);
 }
 
@@ -357,10 +379,9 @@ body {
 }
 
 .episodes-header .logo {
-    color: var(--primary-color);
-    font-size: 1.8rem;
-    font-weight: 900;
-    margin: 0;
+    height: 35px;
+    width: auto;
+    max-width: 150px;
 }
 
 .main-nav {
@@ -387,6 +408,22 @@ body {
     padding: 60px 0;
     position: relative;
     overflow: hidden;
+}
+
+.banner-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.banner-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.3;
 }
 
 .featured-content {
@@ -466,7 +503,7 @@ body {
 
 /* Episodes Grid Section */
 .episodes-section {
-    padding: 60px 0;
+    padding: 60px 40px;
     background-color: var(--bg-dark);
 }
 
@@ -956,7 +993,8 @@ body {
     }
     
     .logo {
-        font-size: 2rem;
+        height: 30px;
+        max-width: 150px;
     }
     
     .logo-container {
@@ -1046,6 +1084,19 @@ body {
     
     .faq-content {
         padding: 20px;
+        font-size: 1rem;
+    }
+    
+    .episodes-section {
+        padding: 40px 20px;
+    }
+    
+    .episodes-section {
+        padding: 30px 15px;
+    }
+    
+    .cta-button {
+        padding: 12px 30px;
         font-size: 1rem;
     }
 }

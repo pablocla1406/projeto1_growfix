@@ -6,13 +6,17 @@ document.addEventListener('DOMContentLoaded', function() {
     const faqButtons = document.querySelectorAll('.faq-question');
     faqButtons.forEach(button => {
         button.addEventListener('click', function() {
-            const icon = this.querySelector('.faq-icon');
+            const icon = this.querySelector('.faq-icon-img');
             const isExpanded = this.getAttribute('aria-expanded') === 'true';
             
-            // Toggle icon
+            // Toggle icon rotation
             setTimeout(() => {
                 const newState = this.getAttribute('aria-expanded') === 'true';
-                icon.textContent = newState ? '−' : '+';
+                if (newState) {
+                    icon.style.transform = 'rotate(45deg)';
+                } else {
+                    icon.style.transform = 'rotate(0deg)';
+                }
             }, 150);
         });
     });
