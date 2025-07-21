@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demonstração do Botão de Fechar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #333;
+            color: white;
+            padding: 20px;
+        }
+        
+        .demo-container {
+            position: relative;
+            width: 90%;
+            height: 400px;
+            background: #222;
+            margin: 20px auto;
+            border: 2px dashed #666;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .close-button-demo {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            background: rgba(0, 0, 0, 0.5);
+            border: 2px solid white;
+            border-radius: 50%;
+            color: white;
+            font-size: 32px;
+            font-weight: bold;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .close-button-demo:hover {
+            background: rgba(255, 0, 0, 0.7);
+            transform: scale(1.1);
+        }
+        
+        .close-button-demo::before {
+            content: "×";
+            line-height: 1;
+        }
+        
+        .arrow {
+            position: absolute;
+            top: 10px;
+            right: 100px;
+            color: yellow;
+            font-size: 20px;
+            animation: blink 1s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0.3; }
+        }
+        
+        .video-placeholder {
+            width: 60%;
+            height: 250px;
+            background: #555;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <h1>🎯 Localização do Botão de Fechar</h1>
+    
+    <p><strong>O botão de fechar fica no canto superior direito do modal, assim:</strong></p>
+    
+    <div class="demo-container">
+        <div class="arrow">👆 BOTÃO AQUI</div>
+        <div class="close-button-demo"></div>
+        <div class="video-placeholder">🎥 ÁREA DO VÍDEO</div>
+    </div>
+    
+    <h2>Características do Botão:</h2>
+    <ul>
+        <li>📍 <strong>Posição:</strong> Canto superior direito (30px do topo e da direita)</li>
+        <li>📏 <strong>Tamanho:</strong> 60x60 pixels</li>
+        <li>🎨 <strong>Aparência:</strong> Círculo com fundo semi-transparente e borda branca</li>
+        <li>✨ <strong>Hover:</strong> Fica vermelho e aumenta um pouco quando você passa o mouse</li>
+        <li>📱 <strong>Mobile:</strong> Fica menor (50x50px) em telas pequenas</li>
+        <li>⚡ <strong>Símbolo:</strong> "×" (multiplicação) branco grande</li>
+    </ul>
+    
+    <p><strong>🔗 Para testar:</strong> Abra o arquivo <code>test-modal.html</code> e clique no botão de play do episódio!</p>
+</body>
+</html>

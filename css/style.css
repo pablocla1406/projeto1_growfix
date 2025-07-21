@@ -24,10 +24,8 @@ body {
 
 /* Hero Section */
 .hero-section {
-    min-height: 100vh;
+    min-height: 50vh;
     position: relative;
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
-                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080"><defs><pattern id="thumbnails" width="320" height="180" patternUnits="userSpaceOnUse"><rect width="320" height="180" fill="%23222"/><rect x="10" y="10" width="300" height="160" fill="%23333" rx="8"/><text x="160" y="95" text-anchor="middle" fill="%23666" font-family="Arial" font-size="14">Growcast</text></pattern></defs><rect width="1920" height="1080" fill="url(%23thumbnails)"/></svg>');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -373,9 +371,13 @@ body {
 }
 
 .episodes-header {
-    background-color: var(--bg-dark);
+    background-color: transparent;
     padding: 15px 0;
-    border-bottom: 1px solid var(--border-color);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
 }
 
 .episodes-header .logo {
@@ -405,9 +407,10 @@ body {
 /* Featured Episode Section */
 .featured-episode {
     background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-    padding: 60px 0;
+    padding: 120px 0 60px 0;
     position: relative;
     overflow: hidden;
+    min-height: 50vh;
 }
 
 .banner-container {
@@ -423,12 +426,15 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    opacity: 0.3;
+    opacity: 0.9;
 }
 
 .featured-content {
     position: relative;
     z-index: 2;
+    display: flex;
+    align-items: center;
+    min-height: 80vh;
 }
 
 .podcast-label {
@@ -507,11 +513,29 @@ body {
     background-color: var(--bg-dark);
 }
 
+.episodes-section .container {
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+
 .section-title {
     color: var(--text-light);
     font-size: 2rem;
     font-weight: 700;
     margin-bottom: 40px;
+}
+
+.episode-title {
+    color: var(--text-light);
+    font-size: 0.75rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.episode-subtitle {
+    color: var(--text-gray);
+    font-size: 1rem;
+    font-weight: 400;
 }
 
 .episodes-grid {
@@ -522,12 +546,13 @@ body {
     height: 100%;
     cursor: pointer;
     position: relative;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     transform-origin: center;
+    padding: 8px;
 }
 
 .episode-card:hover {
-    transform: scale(1.25);
+    transform: scale(1.05);
     z-index: 999;
     position: relative;
 }
@@ -541,12 +566,13 @@ body {
     background: linear-gradient(135deg, #333 0%, #555 100%);
     border-radius: 12px;
     padding: 20px;
-    height: 280px;
+    height: 220px;
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     overflow: hidden;
+    aspect-ratio: 16 / 9;
 }
 
 /* Hover Overlay for Episodes */
@@ -556,15 +582,16 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.8);
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.8) 100%);
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: all 0.4s ease;
     border-radius: 12px;
     z-index: 5;
+    backdrop-filter: blur(1px);
 }
 
 .episode-card:hover .hover-overlay {
@@ -572,7 +599,7 @@ body {
 }
 
 .hover-play-btn {
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0.95);
     color: #333;
     width: 60px;
     height: 60px;
@@ -580,38 +607,48 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.5rem;
-    margin-bottom: 15px;
+    font-size: 1.6rem;
+    margin-right: 20px;
     border: none;
     cursor: pointer;
     transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    flex-shrink: 0;
 }
 
 .hover-play-btn:hover {
     background-color: white;
     transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
 }
 
 .hover-episode-info {
-    text-align: center;
+    text-align: left;
     color: white;
+    flex: 1;
 }
 
 .hover-episode-title {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 700;
     margin-bottom: 8px;
+    line-height: 1.2;
 }
 
 .hover-episode-description {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     opacity: 0.9;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
+    line-height: 1.3;
 }
 
 .hover-episode-duration {
     font-size: 0.8rem;
     opacity: 0.8;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 3px 10px;
+    border-radius: 12px;
+    display: inline-block;
 }
 
 /* Improved hover delay and timing */
@@ -620,11 +657,11 @@ body {
 }
 
 .episode-card:hover {
-    transition-delay: 0.3s;
+    transition-delay: 0.05s;
 }
 
 .episode-card:hover .hover-overlay {
-    transition-delay: 0.5s;
+    transition-delay: 0.1s;
 }
 
 /* Prevent hover on touch devices */
@@ -640,14 +677,14 @@ body {
 
 /* Enhanced grid spacing for hover effect */
 .episodes-grid .row.g-3 {
-    --bs-gutter-x: 2rem;
-    --bs-gutter-y: 2rem;
+    --bs-gutter-x: 3rem;
+    --bs-gutter-y: 2.5rem;
 }
 
 /* Container adjustments for better hover display */
 .episodes-section {
     overflow: visible;
-    padding: 60px 0 80px 0;
+    padding: 80px 80px 100px 80px;
 }
 
 /* Episode Background Colors */
@@ -1091,12 +1128,246 @@ body {
         padding: 40px 20px;
     }
     
+    .episodes-section .container {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+    
+    /* Cards adjustments for mobile - wider format */
+    .episode-thumbnail {
+        height: 180px;
+        aspect-ratio: 16 / 9;
+    }
+    
+    .episode-card:hover {
+        transform: scale(1.02);
+    }
+    
+    .hover-episode-info {
+        text-align: center;
+    }
+    
+    .hover-play-btn {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    
+    .hover-overlay {
+        flex-direction: column !important;
+    }
+    
+    .episodes-grid .row.g-3 {
+        --bs-gutter-x: 2rem;
+        --bs-gutter-y: 2rem;
+    }
+}
+
+@media (max-width: 576px) {
     .episodes-section {
         padding: 30px 15px;
+    }
+    
+    .episodes-section .container {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+    
+    .episode-thumbnail {
+        height: 160px;
+    }
+    
+    .episode-card:hover {
+        transform: scale(1.01);
+    }
+    
+    .hover-play-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 1.3rem;
+    }
+    
+    .hover-episode-title {
+        font-size: 1rem;
+    }
+    
+    .hover-episode-description {
+        font-size: 0.8rem;
+    }
+    
+    .episodes-grid .row.g-3 {
+        --bs-gutter-x: 1rem;
+        --bs-gutter-y: 1.5rem;
+    }
+    
+    .episode-card {
+        padding: 4px;
     }
     
     .cta-button {
         padding: 12px 30px;
         font-size: 1rem;
     }
+}
+
+/* Video Modal Styles */
+#videoModal .modal-content {
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+}
+
+#videoModal .modal-body {
+    background-color: transparent;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#videoModal .btn-close {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 48px;
+    font-weight: bold;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+    cursor: pointer;
+}
+
+#videoModal .btn-close:hover {
+    opacity: 1;
+}
+
+#videoModal .btn-close::before {
+    content: "×";
+    line-height: 1;
+}
+
+.video-container-fullscreen {
+    width: 90%;
+    height: 80%;
+    max-width: 1200px;
+    max-height: 675px; /* 16:9 aspect ratio for max-width */
+}
+
+.video-container-fullscreen iframe {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Animação suave para o modal */
+#videoModal.fade .modal-dialog {
+    transition: transform 0.3s ease-out;
+}
+
+/* Melhorar responsividade do modal */
+@media (max-width: 768px) {
+    .video-container-fullscreen {
+        width: 95%;
+        height: 70%;
+    }
+    
+    #videoModal .btn-close {
+        width: 50px;
+        height: 50px;
+        top: 20px !important;
+        right: 20px !important;
+        font-size: 40px;
+    }
+}
+
+/* Episode Background Images */
+.episode-thumbnail.with-cover {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.episode-thumbnail.with-cover::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.6) 100%);
+    border-radius: 12px;
+    z-index: 1;
+}
+
+.episode-thumbnail.with-cover .episode-content,
+.episode-thumbnail.with-cover .episode-badge {
+    position: relative;
+    z-index: 2;
+}
+
+/* Specific episode covers */
+.episode-thumbnail.growcast-01 {
+    background-image: url('../assets/images/growcast-01.png');
+}
+
+.episode-thumbnail.manoel-roldao {
+    background-image: url('../assets/images/episode-01-thumb.jpg');
+}
+
+.episode-thumbnail.qa-com-isso {
+    background-image: url('../assets/images/episode-02-thumb.jpg');
+}
+
+.episode-thumbnail.qa-la-fora {
+    background-image: url('../assets/images/episode-03-thumb.jpg');
+}
+
+.episode-thumbnail.conselho-ti {
+    background-image: url('../assets/images/episode-04-thumb.jpg');
+}
+
+.episode-thumbnail.agilidade-importa {
+    background-image: url('../assets/images/episode-05-thumb.jpg');
+}
+
+.episode-thumbnail.dois-em-um {
+    background-image: url('../assets/images/episode-06-thumb.jpg');
+}
+
+.episode-thumbnail.lugar-mulher {
+    background-image: url('../assets/images/episode-07-thumb.jpg');
+}
+
+.episode-thumbnail.como-desenvolver {
+    background-image: url('../assets/images/episode-08-thumb.jpg');
+}
+
+.episode-thumbnail.celula-talentos {
+    background-image: url('../assets/images/episode-09-thumb.jpg');
+}
+
+.episode-thumbnail.vivencia-mentor {
+    background-image: url('../assets/images/episode-10-thumb.jpg');
+}
+
+/* Default placeholder for episodes without specific images */
+.episode-thumbnail.video-placeholder {
+    background: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
+    position: relative;
+}
+
+.episode-thumbnail.video-placeholder::before {
+    content: '🎬';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    opacity: 0.3;
+    z-index: 1;
 }
