@@ -265,24 +265,6 @@ body {
     border-radius: 0 0 15px 15px;
 }
 
-.tablet-mockup {
-    position: absolute;
-    right: 0;
-    top: 100px;
-    width: 120px;
-    height: 160px;
-    background-color: #1a1a1a;
-    border-radius: 12px;
-    border: 3px solid #333;
-    z-index: 2;
-}
-
-.tablet-screen {
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, #a8edea, #fed6e3);
-    border-radius: 9px;
-}
 
 /* FAQ Section */
 .faq-section {
@@ -509,13 +491,17 @@ body {
 
 /* Episodes Grid Section */
 .episodes-section {
-    padding: 60px 40px;
+    padding: 60px 40px 80px 40px;
     background-color: var(--bg-dark);
 }
 
+.episodes-section + .episodes-section {
+    padding-top: 40px;
+}
+
 .episodes-section .container {
-    padding-left: 3rem;
-    padding-right: 3rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
 }
 
 .section-title {
@@ -538,68 +524,104 @@ body {
     font-weight: 400;
 }
 
+/* EPISODES GRID - Tamanho fixo para todos os cards */
 .episodes-grid {
     margin-top: 30px;
 }
 
+/* Ajustar espaçamento entre cards */
+.episodes-grid .row.g-3 {
+    --bs-gutter-x: 0.5rem;
+    --bs-gutter-y: 2rem;
+}
+
+/* Garantir que todas as colunas tenham a mesma altura */
+.episodes-grid .row.g-3 > [class*="col-"] {
+    display: flex;
+    margin-bottom: 0.5rem;
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+}
+
+/* Tamanho fixo padronizado para todos os cards de episódio */
 .episode-card {
-    height: 100%;
-    cursor: pointer;
-    position: relative;
-    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    transform-origin: center;
-    padding: 8px;
-}
-
-.episode-card:hover {
-    transform: scale(1.05);
-    z-index: 999;
-    position: relative;
-}
-
-.episode-card:hover .episode-thumbnail {
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7);
+    background: #181818;
     border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
 }
 
 .episode-thumbnail {
     background: linear-gradient(135deg, #333 0%, #555 100%);
     border-radius: 12px;
     padding: 20px;
-    height: 220px;
-    position: relative;
+    height: 200px !important;
+    min-height: 200px !important;
+    max-height: 200px !important;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
     overflow: hidden;
-    aspect-ratio: 16 / 9;
+    position: relative;
+    flex: 1;
 }
 
-/* Hover Overlay for Episodes */
-.episode-card .hover-overlay {
+/* Para cards maiores (largos) - altura menor para manter proporção */
+.episodes-grid .col-xl-6 .episode-thumbnail,
+.episodes-grid .col-lg-8 .episode-thumbnail,
+.episodes-grid .col-md-12 .episode-thumbnail {
+    height: 160px !important;
+    min-height: 160px !important;
+    max-height: 160px !important;
+    aspect-ratio: 21/9;
+}
+
+/* Episode content dentro do thumbnail */
+.episode-thumbnail .episode-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+/* Hover overlay para episódios - funciona com estrutura HTML existente */
+.episode-thumbnail .hover-overlay {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.8) 100%);
     display: flex;
-    flex-direction: row;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     opacity: 0;
-    transition: all 0.4s ease;
+    transition: opacity 0.3s ease;
     border-radius: 12px;
     z-index: 5;
-    backdrop-filter: blur(1px);
+    background: rgba(0, 0, 0, 0.8);
 }
 
 .episode-card:hover .hover-overlay {
     opacity: 1;
 }
 
+.episode-card:hover .episode-content {
+    opacity: 0;
+}
+
 .hover-play-btn {
-    background-color: rgba(255, 255, 255, 0.95);
+    background-color: rgba(255, 255, 255, 0.9);
     color: #333;
     width: 60px;
     height: 60px;
@@ -649,189 +671,6 @@ body {
     padding: 3px 10px;
     border-radius: 12px;
     display: inline-block;
-}
-
-/* Improved hover delay and timing */
-.episode-card {
-    transition-delay: 0s;
-}
-
-.episode-card:hover {
-    transition-delay: 0.05s;
-}
-
-.episode-card:hover .hover-overlay {
-    transition-delay: 0.1s;
-}
-
-/* Prevent hover on touch devices */
-@media (hover: none) {
-    .episode-card:hover {
-        transform: none;
-    }
-    
-    .hover-overlay {
-        display: none;
-    }
-}
-
-/* Enhanced grid spacing for hover effect */
-.episodes-grid .row.g-3 {
-    --bs-gutter-x: 3rem;
-    --bs-gutter-y: 2.5rem;
-}
-
-/* Container adjustments for better hover display */
-.episodes-section {
-    overflow: visible;
-    padding: 80px 80px 100px 80px;
-}
-
-/* Episode Background Colors */
-.featured-bg {
-    background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%) !important;
-}
-
-.orange-bg {
-    background: linear-gradient(135deg, #ff8c42 0%, #ff6b35 100%) !important;
-}
-
-.blue-bg {
-    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%) !important;
-}
-
-.purple-bg {
-    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%) !important;
-}
-
-.green-bg {
-    background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%) !important;
-}
-
-.orange-alt-bg {
-    background: linear-gradient(135deg, #ffa726 0%, #fb8c00 100%) !important;
-}
-
-.dark-blue-bg {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
-}
-
-.orange-gradient-bg {
-    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%) !important;
-}
-
-.episode-badge {
-    background-color: var(--primary-color);
-    color: white;
-    padding: 6px 12px;
-    border-radius: 15px;
-    font-size: 0.7rem;
-    font-weight: 600;
-    display: inline-block;
-    text-transform: uppercase;
-    align-self: flex-start;
-}
-
-.episode-content {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.episode-status {
-    background-color: #00ff00;
-    color: #000;
-    padding: 4px 8px;
-    border-radius: 10px;
-    font-size: 0.6rem;
-    font-weight: 600;
-    display: inline-block;
-    margin-bottom: 10px;
-    width: fit-content;
-}
-
-.episode-title {
-    color: white;
-    font-size: 1.5rem;
-    font-weight: 900;
-    margin: 10px 0;
-    line-height: 1.1;
-}
-
-.episode-subtitle {
-    color: white;
-    font-size: 0.8rem;
-    opacity: 0.9;
-    margin: 0;
-}
-
-/* Flutter Section Styles */
-.flutter-purple-bg {
-    background: linear-gradient(135deg, #6a4c93 0%, #9b59b6 100%) !important;
-}
-
-.flutter-pink-bg {
-    background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%) !important;
-}
-
-.flutter-contact-bg {
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%) !important;
-    color: #333 !important;
-}
-
-.flutter-contact-bg .episode-title,
-.flutter-contact-bg .episode-subtitle,
-.flutter-contact-bg .episode-contact {
-    color: #333 !important;
-}
-
-.flutter-advanced-bg {
-    background: linear-gradient(135deg, #4e73df 0%, #224abe 100%) !important;
-}
-
-.flutter-large-bg {
-    background: linear-gradient(135deg, #28a745 0%, #20c997 100%) !important;
-    height: 250px;
-    position: relative;
-}
-
-.episode-play-btn {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    background-color: rgba(255, 255, 255, 0.9);
-    color: #333;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.2rem;
-}
-
-.episode-author {
-    font-size: 0.8rem;
-    opacity: 0.9;
-    margin-top: 10px;
-}
-
-.episode-date {
-    font-size: 0.9rem;
-    margin-bottom: 15px;
-}
-
-.episode-contact {
-    font-size: 0.9rem;
-    margin: 5px 0;
-    font-weight: 600;
-}
-
-.episode-description {
-    font-size: 0.8rem;
-    margin: 8px 0;
-    opacity: 0.9;
 }
 
 /* Featured Video Player */
@@ -902,7 +741,8 @@ body {
     background-color: #c2185b;
 }
 
-/* Diversos Section Styles */
+/* Diversos Section Styles - Commented out to use default episode-thumbnail style */
+/*
 .diversos-orange-bg {
     background: linear-gradient(135deg, #ff7043 0%, #ff5722 100%) !important;
 }
@@ -923,6 +763,7 @@ body {
     background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%) !important;
     height: 250px;
 }
+*/
 
 .feedback-label {
     background-color: rgba(255, 255, 255, 0.2);
@@ -1068,11 +909,6 @@ body {
         height: 110px;
     }
     
-    .tablet-mockup {
-        width: 90px;
-        height: 120px;
-    }
-    
     .main-nav {
         display: none;
     }
@@ -1090,9 +926,6 @@ body {
         font-size: 2rem;
     }
     
-    .episode-thumbnail {
-        height: 250px;
-    }
 }
 
 @media (max-width: 576px) {
@@ -1125,55 +958,12 @@ body {
     }
     
     .episodes-section {
-        padding: 40px 20px;
-    }
-    
-    .episodes-section .container {
-        padding-left: 1.5rem;
-        padding-right: 1.5rem;
-    }
-    
-    /* Cards adjustments for mobile - wider format */
-    .episode-thumbnail {
-        height: 180px;
-        aspect-ratio: 16 / 9;
-    }
-    
-    .episode-card:hover {
-        transform: scale(1.02);
-    }
-    
-    .hover-episode-info {
-        text-align: center;
-    }
-    
-    .hover-play-btn {
-        margin-right: 0;
-        margin-bottom: 10px;
-    }
-    
-    .hover-overlay {
-        flex-direction: column !important;
-    }
-    
-    .episodes-grid .row.g-3 {
-        --bs-gutter-x: 2rem;
-        --bs-gutter-y: 2rem;
-    }
-}
-
-@media (max-width: 576px) {
-    .episodes-section {
         padding: 30px 15px;
     }
     
     .episodes-section .container {
         padding-left: 0.5rem;
         padding-right: 0.5rem;
-    }
-    
-    .episode-thumbnail {
-        height: 160px;
     }
     
     .episode-card:hover {
@@ -1184,6 +974,8 @@ body {
         width: 50px;
         height: 50px;
         font-size: 1.3rem;
+        margin-right: 0;
+        margin-bottom: 10px;
     }
     
     .hover-episode-title {
@@ -1194,9 +986,23 @@ body {
         font-size: 0.8rem;
     }
     
+    .hover-episode-info {
+        text-align: center;
+    }
+    
+    .hover-overlay {
+        flex-direction: column !important;
+    }
+    
     .episodes-grid .row.g-3 {
-        --bs-gutter-x: 1rem;
-        --bs-gutter-y: 1.5rem;
+        --bs-gutter-x: 1.25rem;
+        --bs-gutter-y: 1.75rem;
+    }
+    
+    .episodes-grid .row.g-3 > [class*="col-"] {
+        margin-bottom: 1.25rem;
+        padding-left: 0.625rem;
+        padding-right: 0.625rem;
     }
     
     .episode-card {
@@ -1208,6 +1014,8 @@ body {
         font-size: 1rem;
     }
 }
+
+
 
 /* Video Modal Styles */
 #videoModal .modal-content {
@@ -1304,11 +1112,6 @@ body {
     z-index: 1;
 }
 
-.episode-thumbnail.with-cover .episode-content,
-.episode-thumbnail.with-cover .episode-badge {
-    position: relative;
-    z-index: 2;
-}
 
 /* Specific episode covers */
 .episode-thumbnail.growcast-01 {
