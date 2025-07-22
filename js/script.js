@@ -1,7 +1,5 @@
 
-    // Função para criar e mostrar modal do vídeo (para página de episódios)
     function showVideoModal(video) {
-        // Remove modal existente se houver
         const existingModal = document.getElementById('videoModal');
         if (existingModal) {
             existingModal.remove();
@@ -28,20 +26,16 @@
             </div>
         `;
         
-        // Adiciona o modal ao DOM
         document.body.insertAdjacentHTML('beforeend', modalHTML);
         
-        // Mostra o modal
         const modal = new bootstrap.Modal(document.getElementById('videoModal'));
         modal.show();
         
-        // Remove o modal quando fechado para evitar conflitos
         document.getElementById('videoModal').addEventListener('hidden.bs.modal', function() {
             this.remove();
         });
     }
 
-    // Array de vídeos completo do Growflix para página de episódios
     const episodiosMovies = [
         {
             img: "https://img.youtube.com/vi/aJ-HZuLcKeA/maxresdefault.jpg",
@@ -245,9 +239,7 @@
         }
     ];
 
-    // Inicialização para página de episódios
     if (document.querySelector('.episodes-page')) {
-        // Aplica thumbnails aos cards quando a página carrega
         const cards = document.querySelectorAll('.card');
         
         cards.forEach((card, index) => {
@@ -255,18 +247,15 @@
                 const thumbnail = card.querySelector('.card-thumbnail');
                 const movie = episodiosMovies[index];
                 
-                // Aplica a imagem como background
                 thumbnail.style.backgroundImage = `url('${movie.img}')`;
                 thumbnail.style.backgroundSize = 'cover';
                 thumbnail.style.backgroundPosition = 'center';
                 thumbnail.style.backgroundRepeat = 'no-repeat';
                 
-                // Remove o gradiente original e adiciona overlay para legibilidade
                 thumbnail.style.background = `linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('${movie.img}')`;
                 thumbnail.style.backgroundSize = 'cover';
                 thumbnail.style.backgroundPosition = 'center';
                 
-                // Adiciona hover overlay se não existir
                 if (!card.querySelector('.hover-overlay')) {
                     const hoverOverlay = document.createElement('div');
                     hoverOverlay.className = 'hover-overlay';
@@ -277,7 +266,6 @@
                     thumbnail.appendChild(hoverOverlay);
                 }
                 
-                // Adiciona evento de clique no botão de play
                 const playBtn = card.querySelector('.hover-play-btn');
                 if (playBtn) {
                     playBtn.addEventListener('click', function(e) {
@@ -286,18 +274,15 @@
                     });
                 }
                 
-                // Adiciona evento de clique no card inteiro
                 card.addEventListener('click', function() {
                     showVideoModal(movie);
                 });
             }
         });
         
-        // Adiciona evento ao botão de assistir do banner principal
         const mainPlayBtn = document.querySelector('.btn-play');
         if (mainPlayBtn) {
             mainPlayBtn.addEventListener('click', function() {
-                // Mostra o episódio 01 (Growcast #01)
                 if (episodiosMovies[1]) {
                     showVideoModal(episodiosMovies[1]);
                 }
